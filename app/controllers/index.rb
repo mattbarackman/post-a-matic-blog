@@ -1,5 +1,6 @@
+
 get '/' do
-  # Look in app/views/index.erb
+  @notes = Note.order("created_at ASC")
   erb :index
 end
 
@@ -8,21 +9,21 @@ get '/create' do
 end
 
 post '/create' do 
-  redirect "/#{post.id}"
+  post = Note.create(params[:form])
+  redirect "/"
 end
 
-get '/:post_id' do |post_id|
-  erb :post
-end
-
-delete '/:post_id' do |post_id|
+delete '/:note_id' do |note_id|
+  Note.destroy(note_id)
   redirect '/'
 end
 
-get '/edit/:post_id' do |post_id|
+get '/edit/:note_id' do |note_id|
+  @note = Note.find(note_id)
   erb :edit
 end
 
-post '/edit/:post_id' do |post_id|
-  redirect "/#{post.id}"
+post '/edit/:note_id' do |note_id|
+  Note.update(note_id,params[:form])
+  redirect "/"
 end
