@@ -1,5 +1,5 @@
 <div class="container">
-  <form action="/edit/<%=@note.id%>" method="post">
+  <form action="/notes/<%=@note.id%>/edit" method="post">
     <input name="form[title]" type="text" value="<%=@note.title%>">
     <textarea cols="40" rows="5" name="form[content]"><%=@note.content%></textarea>
     <input class="update btn" type="submit" value="Update">

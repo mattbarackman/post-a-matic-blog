@@ -1,21 +1,26 @@
 $(document).ready(function() {
-  $('.delete_form').on('submit', function(e){
+
+  function confirmDeletion(e) {
+    e.preventDefault();
+    var note = $(this).closest('.note');
+
+    var request = $.ajax({
+      url: this.action,
+      method: "DELETE",
+      data: $(this).serialize()
+    });
+
+    request.done(function(response){
+     note.fadeOut(500);
+   });
+  }
+
+  function requestConfirmation(e) {
     e.preventDefault();
     var deleteButton = $(this).children('.btn.btn-danger');
     deleteButton.val('Confirm?');
-    $(this).on('submit', function(e){
-      e.preventDefault();
-      console.log(this.action);
-      var request = $.ajax({
-        url: this.action,
-        method: "DELETE",
-        data: $(this).serialize(),
-        form: $(this).closest('.note')
-      });
+    $(this).on('submit', confirmDeletion);
+  }
 
-      request.done(function(response){
-         this.form.fadeOut(500);
-      });
-    });
-  });
+  $('.delete_form').on('submit', requestConfirmation);
 });
