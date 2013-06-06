@@ -17,6 +17,10 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'awesome_print'
+
+gem 'sinatra-flash'
+
 group :test do
   gem 'faker'
   gem 'rspec'
