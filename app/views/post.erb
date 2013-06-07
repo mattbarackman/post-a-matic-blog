@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="blog_post">
+    <h2><%= @post.title %></h2>
+    <div class="body">
+     <%= @post.body %>
+    </div>
+    <div class="tags">
+      <ul>
+        <% @post.tags.each do |tag| %>
+          <li><a href="/tags/<%=tag.name%>"><%=tag.name%></a></li>
+        <% end %>
+      </ul>
+    </div> 
+
+  <form class="delete_form" action="/posts/<%=@post.id%>" method="post">
+    <input class="danger" type="submit" value="Delete">
+    <input name="_method" type="hidden" value="delete">
+    <input name="id" type="hidden" value="<%=@post.id%>">
+  </form>
+
+    <form class="edit_form" action="/posts/<%=@post.id%>/edit" method="get">
+      <input class="btn" type="submit" value="edit">
+    </form>
+    <%= erb :errors if @errors%>
+  </div>
+</div>

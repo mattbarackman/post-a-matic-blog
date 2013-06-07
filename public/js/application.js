@@ -13,10 +13,10 @@ $(document).ready(function() {
 
   function requestConfirmation(e) {
     e.preventDefault();
-    var deleteButton = $(this).children('.btn.btn-danger');
+    var deleteButton = $(this).children('.danger');
     deleteButton.val('Confirm?');
     $(this).on('submit', confirmDeletion);
   }
 
-  $('.delete_form').on('submit', requestConfirmation);
+  $('.delete_button').on('submit', requestConfirmation);
 });

@@ -7,17 +7,18 @@
 th {
   text-align: left;
 }
+
 input {
-  display: inline;
+  display: block;
   margin: 10px 0;
-  width: 536px;
+  width: auto;
 }
 
-.delete_form{
+.delete_button{
   display:inline;
 }
 
-.edit_form{
+.edit_button{
   display:inline;
   height: auto;
 }
@@ -42,7 +43,6 @@ nav {
   vertical-align: middle;
   line-height: 80px;
   margin-right: 20px;
-
 }
 
 nav a{
@@ -52,4 +52,51 @@ nav a{
 
 nav a:hover{
   text-decoration: underline;
+}
+
+.edit_form div{
+  margin: 20px 0 0 0;
+}
+
+.edit_form textarea {
+  margin-top: 10px;
+}
+
+header a {
+  text-decoration: none;
+  color: white;
+}
+
+.blog_post {
+  margin-bottom: 50px;
+  background-color: #EFEFEF;
+  padding: 20px ;
+}
+
+.blog_post h2 {
+  margin-top: 0px;
+}
+
+.blog_post ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.blog_post li {
+  display: inline;
+  background-color: lightgreen;
+  padding: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: black; 
+}
+
+a:hover {
+  text-decoration: underline; 
+}
+
+.errors {
+  background-color: #e2b6b9;
 }

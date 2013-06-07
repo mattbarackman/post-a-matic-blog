@@ -1,7 +1,17 @@
 <div class="container">
-  <form action="/posts/<%=@post.id%>/edit" method="post">
-    <input name="form[title]" type="text" value="<%=@post.title%>">
-    <textarea cols="40" rows="5" name="form[body]"><%=@post.body%></textarea>
-    <input class="update btn" type="submit" value="Update">
-  </form>
+  <div class ="edit_form">
+    <form action="/posts/<%=@post.id%>/edit" method="post">
+      <div><label><h3>Title</h3></label></div>
+      <input name="form[title]" type="text" value="<%=@post.title%>">
+
+      <div><label for="content"><h3>Content</h3></label></div>
+      <textarea cols="40" rows="5" id="content" name="form[body]"><%=@post.body%></textarea>
+
+      <div><label for="tags"><h3>Tags</h3></label></div>
+      <input name="form[tags]" id="tags" value="<%=@post.tag_list%>">
+      <div><input type="submit" value="Update"></div>
+    </form>
+  <%= erb :errors if @errors%>
+  </div>
 </div>
+

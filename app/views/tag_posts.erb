@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="blog_posts">
-    <% @posts.each do |post| %>
+  <h2>Tagged with: <%=@tag.name.capitalize%></h2>
+    <% @tag.posts.each do |post| %>
     <div class="blog_post">
       <h2><a href="/posts/<%= post.id %>"><%= post.title %></a></h2>
       <div class="body">
@@ -25,5 +25,4 @@
       </form>
     </div>
     <% end %>
-  </div>
 </div>

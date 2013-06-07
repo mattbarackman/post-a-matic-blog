@@ -1,0 +1,8 @@
+  <div class="errors">
+    <p> You have the following errors: </p>
+      <ul>
+        <% @errors.each do |attr, message| %>
+          <li>Please fix <%=attr%>. It <%=message.first%>.</li>
+        <% end %>
+      </ul>
+  </div>

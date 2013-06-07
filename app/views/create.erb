@@ -3,6 +3,9 @@
   <form action="/posts/new" method="post">
     <input name="form[title]" type="text" placeholder="Title">
     <textarea cols="40" rows="5" name="form[body]" placeholder="Write a description for your post here..."></textarea>
-    <input class="btn" type="submit" value="Submit">
+    <input name="form[tags]" id="tags" placeholder="tags">
+    <input type="submit" value="Submit">
   </form>
+  <% p @errors %> 
+  <%= erb :errors if @errors  %>
 </div>
