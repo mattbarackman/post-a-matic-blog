@@ -1,7 +1,7 @@
 <div class="container">
-  <form action="/notes/<%=@note.id%>/edit" method="post">
-    <input name="form[title]" type="text" value="<%=@note.title%>">
-    <textarea cols="40" rows="5" name="form[content]"><%=@note.content%></textarea>
+  <form action="/posts/<%=@post.id%>/edit" method="post">
+    <input name="form[title]" type="text" value="<%=@post.title%>">
+    <textarea cols="40" rows="5" name="form[body]"><%=@post.body%></textarea>
     <input class="update btn" type="submit" value="Update">
   </form>
 </div>

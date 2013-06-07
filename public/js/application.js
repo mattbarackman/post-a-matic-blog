@@ -2,17 +2,13 @@ $(document).ready(function() {
 
   function confirmDeletion(e) {
     e.preventDefault();
-    var note = $(this).closest('.note');
-
+    var blog_post = $(this).closest('.blog_post');
+    blog_post.toggle(500);
     var request = $.ajax({
       url: this.action,
       method: "DELETE",
       data: $(this).serialize()
     });
-
-    request.done(function(response){
-     note.fadeOut(500);
-   });
   }
 
   function requestConfirmation(e) {

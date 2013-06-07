@@ -18,7 +18,7 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'awesome_print'
-
+gem 'faker'
 gem 'sinatra-flash'
 
 group :test do

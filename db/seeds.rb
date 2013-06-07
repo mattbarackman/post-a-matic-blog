@@ -1,6 +1,6 @@
-NAMES = %w(Matt John Jimmy Carla Adam Ricky)
 
-NAMES.length.times do |i|
-  Note.create(title:"#{NAMES[i]}'s birthday", content: "Buy a great gift")
+10.times do
+  Post.create(title: Faker::Lorem.words(4..6).join(" "),
+              body: Faker::Lorem.sentences(6..8).join(" "))
 end
 

@@ -19,7 +19,7 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 require 'sinatra/flash'
 require 'awesome_print'
-
+require 'faker'
 require 'erb'
 
 # Some helper constants for path-centric logic
